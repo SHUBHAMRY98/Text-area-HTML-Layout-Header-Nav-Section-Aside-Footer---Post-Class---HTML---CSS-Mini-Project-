@@ -79,7 +79,7 @@ body{
 
 
 .main-text{
-    margin-top: 20%;
+    margin-top: 15%;
     font-size: 60px;
    
 }
@@ -262,7 +262,7 @@ background: #f32d6c;
 }
 .social-icon a{
     text-decoration: none;
-    font-size: 30px;
+    font-size: 60px;
     margin-right: 15px;
     color: #ababab;
     display: inline-block;
@@ -380,5 +380,5 @@ form .btn2{
     color: #b80a04;
     margin-top: 20px;
     display: block;
-    font-size: 15px;
+    font-size: 25px;
 }
