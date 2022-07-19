@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">        
+    <head>
 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/8f84a9cef0.js" crossorigin="anonymous"></script>
+    
+    <div id="header">
+      
+   <h2>  <i class="logo">Shubham.</i></h2>
+   <nav>
+            <ul id="sidemenu">
+                <li><a href="#main">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Skills</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contacts</a></li>
+                
+            </ul>
+            
+        </nav>
+    </div>
+    </head>
+        <body>
+        <div id="main" class="main">
+            <div class="container">
+        <div class="main-text">
+            
+            <p>Hi, I'm <span>Shubham Yadav</span><br>(Web Devloper)</p>
+        </div>
+        </div>
+    </div>
+
+<div id="about" class="about">
+    <div class="container">
+        <div class="row">
+        <div class="about-col-1">
+            <img src="2857.jpg" >
+        </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Biography</h1>
+                <p>I am a graduate student in the department of Electrical Engineering at RAJKIYA ENGINEERING COLLEGE SONBHADRA, graduating in August 2020.</p><br>
+                <p>I am a Front-End Developer who loves building user friendly website, enjoy writting documentation and love to helping people how to learn code.</p><br>
+                <p>I'm currently intrested in learning more delving deeper into Front-End (HTML, CSS, JavaScript, ReactJS, NodeJS, MongoDB etc) and also Back-End.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div id="services"> 
+    <div class="container">
+    <h1 class="sub-title">Skills</h1>
+    <div class="services-list">
+        <div>
+            
+            <h2>Back-End </h2>
+            <img src="java.png" class="S"></img>
+            <img src="node.jpg" class="S"></img>
+            <img src="c.png" class="S"></img>
+           
+        </div>
+        <div>
+            
+            <h2>Front-End </h2>
+            <img src="html.png" class="S"></img>
+            <img src="css.jpg" class="S"></img>
+            <img src="js.jpg" class="S"></img>
+           
+        </div>
+        <div>
+           
+            <h2>Other</h2>
+            <img src="git.png" class="S"></img>
+            <img src="ij.jpg" class="S"></img>
+            <img src="vsc.jpg" class="S"></img>
+           
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--projects -->
+
+<div id="portfolio">
+    <div class="container">
+        <div class="sub-title">Projects</div>
+        <div class="work-list">
+            <div class="work">
+                <img src="cur-con.webp">
+                <div class="layer">
+                    <h3>Currency-Converter</h3>
+                    <p>Real Time Currency Converter converts user-assigned currency into just one currency. It shows the real-time rate of
+                        the currency if the Internet provides Internet connectivity and the final updated price of the currency.</p>
+                    <a href=""><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+       <!---- see more button ---->
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+        <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+<p><i class="fa-solid fa-envelope"></i> recee47@outlook.com</p>
+<p><i class="fa-solid fa-phone"></i> 8787270679</p>
+<div class="social-icon">
+    <a href="https://www.facebook.com/yadav.shubham.967"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.instagram.com/invites/contact/?i=8lfu4ih8wgum&utm_content=1wfh6os"><i class="fa-brands fa-instagram-square"></i></a>
+    <a href="https://www.linkedin.com/in/shubham-yadav-829731171"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/SHUBHAMRY98"><i class="fa-brands fa-github"></i></a>
+</div>
+    <a href="Resume-SHUBHAM YADAV.pdf" download class="btn btn2">Download-Resume</a></div>
+        
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Write Your Message Here"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <p>Copyright  Shubham <i class="fa-solid fa-heart"></i></p>
+</div>
+</div>
+
+
+
+
+
+<!----use js for feedback form responsive-->
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwpbTWDbJvRoycm3P4FlHXxChEu1hJH5S7ASKmmiB5uyKnkBC8FtD_Dh6789XEItmjQYA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Your message has been sent succesfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+        },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
