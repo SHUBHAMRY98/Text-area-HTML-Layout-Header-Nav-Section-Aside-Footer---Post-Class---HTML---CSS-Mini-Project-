@@ -170,6 +170,11 @@ transform: translateY(-10px);
     grid-gap: 40px;
     margin-top: 50px;
 }
+
+.work-list a{
+    max-width:300px;
+}
+
 .work{
     border-radius: 10px;
     position: relative;
@@ -381,4 +386,5 @@ form .btn2{
     margin-top: 20px;
     display: block;
     font-size: 25px;
+
 }
