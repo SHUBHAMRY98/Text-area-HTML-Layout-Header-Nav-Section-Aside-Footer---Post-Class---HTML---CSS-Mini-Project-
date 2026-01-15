@@ -264,30 +264,38 @@
 <!----use js for feedback form responsive-->
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwpbTWDbJvRoycm3P4FlHXxChEu1hJH5S7ASKmmiB5uyKnkBC8FtD_Dh6789XEItmjQYA/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Your message has been sent succesfully"
-            setTimeout(function(){
-                msg.innerHTML=""
-        },5000)
-            form.reset()
-        })
-        .catch(error => {
-  msg.innerHTML = "Something went wrong!"
-  console.error('Error!', error.message)
-})
+   
 
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwpbTWDbJvRoycm3P4FlHXxChEu1hJH5S7ASKmmiB5uyKnkBC8FtD_Dh6789XEItmjQYA/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form)
     })
+    .then(() => {
+      msg.innerHTML = "Message sent successfully ✔️"
+      setTimeout(() => msg.innerHTML = "", 4000)
+      form.reset()
+    })
+    .catch(() => {
+      msg.innerHTML = "Something went wrong ❌"
+    })
+  })
+</script>
+
   </script>
 </body>
 
 </html>
+
 
 
 
