@@ -241,9 +241,10 @@
     <a href="Shubham_CV.pdf" download class="btn btn2">Download-Resume</a></div>
         
         <div class="contact-right">
-            <form name="submit-to-google-sheet">
+            <form name="submit-to-google-sheet" method="post">
+
                 <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="text" name="Email" placeholder="Your Email" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
                 <textarea name="Message" rows="6" placeholder="Write Your Message Here"></textarea>
                 <button type="submit" class="btn btn2">Submit</button>
             </form>
@@ -277,12 +278,17 @@
         },5000)
             form.reset()
         })
-        .catch(error => console.error('Error!', error.message))
+        .catch(error => {
+  msg.innerHTML = "Something went wrong!"
+  console.error('Error!', error.message)
+})
+
     })
   </script>
 </body>
 
 </html>
+
 
 
 
